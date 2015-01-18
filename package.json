@@ -1,12 +1,12 @@
 {
-  "name": "railscasts-syntax",
+  "name": "atom-railscasts-syntax",
   "theme": "syntax",
-  "version": "0.3.0",
+  "version": "1.0.0",
   "private": true,
   "description": "A port of @ryanb's timeless RailsCasts theme",
-  "repository": "https://github.com/rpowelll/railscasts-syntax",
+  "repository": "https://github.com/kriswill/atom-railscasts-syntax",
   "license": "MIT",
   "engines": {
-    "atom": ">0.50.0"
+    "atom": ">0.172.0"
   }
 }

@@ -8,7 +8,7 @@
 @function: #ffc66d;
 @inserted-bg: #144212;
 @invalid-bg: #900;
-@invisible: #404040;
+@invisible: #353535;
 @keyword: #cc7833;
 @literal: #a5c261;
 @literal-escaped: #519f50;
@@ -20,22 +20,26 @@
 @variable: #d0d0ff;
 @white: #fff;
 
-.editor, .editor .gutter, .zen .panes .pane {
+atom-text-editor,
+atom-text-editor .gutter,
+.zen atom-pane-container atom-pane {
   background-color: @background;
   color: @foreground;
 }
 
-.editor.is-focused .cursor {
-  border-color: @white;
-}
-
-.editor.is-focused .selection .region {
-  background-color: @selection-bg;
-  opacity: 0.88;
-}
-
-.editor.is-focused .line-number.cursor-line-no-selection, .editor.is-focused .line.cursor-line {
-  background-color: lighten(@background, 8%);
+atom-text-editor {
+  &.is-focused {
+    .cursor {
+      border-color: @white;
+    }
+    .selection .region {
+      background-color: @selection-bg;
+      opacity: 0.88;
+    }
+    .line-number.cursor-line-no-selection,  .line.cursor-line {
+      background-color: lighten(@background, 8%);
+    }
+  }
 }
 
 .comment {
@@ -55,15 +59,11 @@
   color: @white;
 }
 
-.constant.numeric {
+.constant.numeric, .string{
   color: @literal;
 }
 
-.variable {
-  color: @variable;
-}
-
-.variable.language, .variable.other {
+.variable, .variable.language, .variable.other {
   color: @variable;
 }
 
@@ -77,10 +77,6 @@
 
 .constant.language {
   color: @type;
-}
-
-.string {
-  color: @literal;
 }
 
 .support.function {
@@ -136,10 +132,9 @@
 
 .link {
   color: @literal;
-}
-
-.link .entity {
-  color: @symbol;
+  .entity {
+    color: @symbol;
+  }
 }
 
 .meta.diff.header, .meta.separator.diff, .meta.diff.index, .meta.diff.range {

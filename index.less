@@ -27,19 +27,17 @@ atom-text-editor .gutter,
   color: @foreground;
 }
 
-atom-text-editor {
-  &.is-focused {
-    .cursor {
-      border-color: @white;
-    }
-    .selection .region {
-      background-color: @selection-bg;
-      opacity: 0.88;
-    }
-    .line-number.cursor-line-no-selection,  .line.cursor-line {
-      background-color: lighten(@background, 8%);
-    }
-  }
+atom-text-editor .is-focused .cursor {
+  border-color: @white;
+}
+
+.line-number.cursor-line-no-selection,  .line.cursor-line {
+  background-color: lighten(@background, 8%);
+}
+
+.highlight .region {
+  background-color: @selection-bg;
+  opacity: 0.88;
 }
 
 .comment {

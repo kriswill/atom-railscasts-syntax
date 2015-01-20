@@ -97,6 +97,21 @@ atom-text-editor .is-focused .cursor {
   color: @tag;
 }
 
+.meta.json {
+  .json.string.quoted.double {
+    color: @tag;
+    > .punctuation {
+      color: @keyword;
+    }
+  }
+  .json.meta.structure.dictionary.value > .string.quoted.double {
+    color: @literal;
+    > .punctuation {
+      color: @literal-escaped;
+    }
+  }
+}
+
 .invalid {
   background-color: @invalid-bg;
   color: contrast(@invalid-bg);
@@ -146,3 +161,4 @@ atom-text-editor .is-focused .cursor {
 .wrap-guide {
   opacity: 0.1;
 }
+
